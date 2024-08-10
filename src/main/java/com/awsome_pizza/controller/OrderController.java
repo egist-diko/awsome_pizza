@@ -1,5 +1,6 @@
 package com.awsome_pizza.controller;
 
+import com.awsome_pizza.dataTypes.OrderStatus;
 import com.awsome_pizza.model.Order;
 import com.awsome_pizza.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ public class OrderController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Order> updateOrderStatus(@PathVariable Long id , @RequestBody String status){
+    public ResponseEntity<Order> updateOrderStatus(@PathVariable Long id , @RequestParam OrderStatus status){
         try {
             Order order = orderService.updateOrderStatus(id,status);
             if(order!=null){
