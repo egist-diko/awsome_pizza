@@ -44,7 +44,7 @@ public class OrderController {
             if(order!=null){
                 return new ResponseEntity(order.get(),HttpStatus.OK);
             }
-            return new ResponseEntity("Supplier with id: "+id+"was not found",HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Order with id: "+id+"was not found",HttpStatus.NOT_FOUND);
         }catch(Exception e){
             return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -71,7 +71,7 @@ public class OrderController {
             if(order!=null){
                 return new ResponseEntity(order,HttpStatus.OK);
             }
-            return new ResponseEntity("Supplier with id: "+id+"was not found",HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Order with id: "+id+"was not found",HttpStatus.NOT_FOUND);
         }catch(Exception e){
             return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
